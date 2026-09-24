@@ -5,7 +5,7 @@ let nextItemId = 1;
 
 export default function CreateOrderForm({ customerId, onOrderCreated }) {
   const [lineItems, setLineItems] = useState([
-    { id: nextItemId++, productName: '', quantity: 1, unitPrice: 0 },
+    { id: nextItemId++, productName: '', quantity: '', unitPrice: '' },
   ]);
   const [error, setError] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -19,7 +19,7 @@ export default function CreateOrderForm({ customerId, onOrderCreated }) {
   };
 
   const addItem = () => {
-    setLineItems((prev) => [...prev, { id: nextItemId++, productName: '', quantity: 1, unitPrice: 0 }]);
+    setLineItems((prev) => [...prev, { id: nextItemId++, productName: '', quantity: '', unitPrice: '' }]);
   };
 
   const removeItem = (index) => {
@@ -56,7 +56,7 @@ export default function CreateOrderForm({ customerId, onOrderCreated }) {
           unitPrice: Number(li.unitPrice),
         })),
       });
-      setLineItems([{ id: nextItemId++, productName: '', quantity: 1, unitPrice: 0 }]);
+      setLineItems([{ id: nextItemId++, productName: '', quantity: '', unitPrice: '' }]);
       onOrderCreated();
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create order');
@@ -80,7 +80,7 @@ export default function CreateOrderForm({ customerId, onOrderCreated }) {
           />
           <input
             type="number"
-            placeholder="Qty"
+            placeholder="Quantity"
             min="1"
             value={item.quantity}
             onChange={(e) => updateItem(index, 'quantity', e.target.value)}
@@ -88,7 +88,7 @@ export default function CreateOrderForm({ customerId, onOrderCreated }) {
           />
           <input
             type="number"
-            placeholder="Price"
+            placeholder="Price (KSh)"
             min="0.01"
             step="0.01"
             value={item.unitPrice}

@@ -47,9 +47,9 @@ public class AppDbContext : DbContext
     private static void SeedData(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Customer>().HasData(
-            new Customer { Id = 1, Name = "Alice Johnson", Email = "alice@example.com" },
-            new Customer { Id = 2, Name = "Bob Smith", Email = "bob@example.com" },
-            new Customer { Id = 3, Name = "Charlie Brown", Email = "charlie@example.com" }
+            new Customer { Id = 1, Name = "Wanjiku Kamau", Email = "wanjiku@example.com" },
+            new Customer { Id = 2, Name = "Brian Ochieng", Email = "brian@example.com" },
+            new Customer { Id = 3, Name = "Amina Mwangi", Email = "amina@example.com" }
         );
 
         modelBuilder.Entity<Order>().HasData(
@@ -59,10 +59,10 @@ public class AppDbContext : DbContext
         );
 
         modelBuilder.Entity<LineItem>().HasData(
-            new LineItem { Id = 1, ProductName = "Laptop", Quantity = 1, UnitPrice = 999.99m, OrderId = 1 },
-            new LineItem { Id = 2, ProductName = "Mouse", Quantity = 2, UnitPrice = 25.00m, OrderId = 1 },
-            new LineItem { Id = 3, ProductName = "Keyboard", Quantity = 1, UnitPrice = 75.00m, OrderId = 2 },
-            new LineItem { Id = 4, ProductName = "Monitor", Quantity = 1, UnitPrice = 450.00m, OrderId = 3 }
+            new LineItem { Id = 1, ProductName = "Laptop", Quantity = 1, UnitPrice = 85000.00m, OrderId = 1 },
+            new LineItem { Id = 2, ProductName = "Mouse", Quantity = 2, UnitPrice = 2500.00m, OrderId = 1 },
+            new LineItem { Id = 3, ProductName = "Keyboard", Quantity = 1, UnitPrice = 4500.00m, OrderId = 2 },
+            new LineItem { Id = 4, ProductName = "Monitor", Quantity = 1, UnitPrice = 35000.00m, OrderId = 3 }
         );
     }
 }

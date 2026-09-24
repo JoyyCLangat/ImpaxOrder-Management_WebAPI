@@ -30,11 +30,11 @@ export default function OrderList({ orders }) {
             <td>
               {order.lineItems.map((li) => (
                 <div key={li.id} className="line-item">
-                  {li.productName} &times; {li.quantity} @ ${li.unitPrice.toFixed(2)}
+                  {li.productName} &times; {li.quantity} @ KSh {li.unitPrice.toFixed(2)}
                 </div>
               ))}
             </td>
-            <td style={{ textAlign: 'right', fontWeight: 600 }}>${order.totalValue.toFixed(2)}</td>
+            <td style={{ textAlign: 'right', fontWeight: 600 }}>KSh {order.totalValue.toFixed(2)}</td>
           </tr>
         ))}
       </tbody>

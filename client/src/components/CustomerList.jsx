@@ -7,7 +7,7 @@ const CustomerRow = memo(function CustomerRow({ customer, onSelect }) {
       <td style={{ fontWeight: 500 }}>{customer.name}</td>
       <td>{customer.email}</td>
       <td style={{ textAlign: 'center' }}>{customer.orderCount}</td>
-      <td style={{ textAlign: 'right', fontWeight: 600 }}>${customer.totalSpend.toFixed(2)}</td>
+      <td style={{ textAlign: 'right', fontWeight: 600 }}>KSh {customer.totalSpend.toFixed(2)}</td>
     </tr>
   );
 });
